@@ -1,0 +1,18 @@
+{
+  "name": "@charlesstover/quicksort",
+  "version": "1.0.0",
+  "author": "Charles Stover <npmjs@charlesstover.com>",
+  "description": "An implementation of Quicksort in JavaScript",
+  "license": "MIT",
+  "main": "quicksort.js",
+  "repository": "https://github.com/CharlesStover/quicksort-js.git",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "tsc"
+  },
+  "types": "quicksort.d.ts",
+  "devDependencies": {
+    "@types/node": "^10.12.9",
+    "typescript": "^3.1.6"
+  }
+}
