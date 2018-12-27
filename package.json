@@ -8,7 +8,8 @@
   "repository": "https://github.com/CharlesStover/quicksort-js.git",
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "tsc"
+    "prepublishOnly": "tsc",
+    "test": "echo No tests.&& exit 0"
   },
   "types": "quicksort.d.ts",
   "devDependencies": {
