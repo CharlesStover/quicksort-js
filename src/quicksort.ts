@@ -1,7 +1,8 @@
-type SortingAlgorithm = (a: any, b: any) => SortingPosition;
+type Comparator = (a: any, b: any) => SortingPosition;
+type SortingAlgorithm = <T>(unsortedArray: T[], comparator?: Comparator) => T[];
 type SortingPosition = -1 | 0 | 1;
 
-const defaultSortingAlgorithm: SortingAlgorithm = (a: any, b: any): SortingPosition => {
+const defaultComparator: Comparator = (a: any, b: any): SortingPosition => {
   if (a < b) {
     return -1;
   }
@@ -11,9 +12,9 @@ const defaultSortingAlgorithm: SortingAlgorithm = (a: any, b: any): SortingPosit
   return 0;
 };
 
-const quickSort = <T>(
+const quickSort: SortingAlgorithm = <T>(
   unsortedArray: T[],
-  sortingAlgorithm: SortingAlgorithm = defaultSortingAlgorithm
+  comparator: Comparator = defaultComparator
 ): T[] => {
 
   // Create a sortable array to return.
@@ -30,7 +31,7 @@ const quickSort = <T>(
     const pivotValue: T = sortedArray[end];
     let splitIndex: number = start;
     for (let i: number = start; i < end; i++) {
-      const sort: SortingPosition = sortingAlgorithm(sortedArray[i], pivotValue);
+      const sort: SortingPosition = comparator(sortedArray[i], pivotValue);
 
       // This value is less than the pivot value.
       if (sort === -1) {
@@ -58,7 +59,7 @@ const quickSort = <T>(
 
     // Recursively sort the less-than and greater-than arrays.
     recursiveSort(start, splitIndex - 1);
-    recursiveSort(splitIndex + 1, end);
+    recursiveSort(splitIndex, end);
   };
 
   // Sort the entire array.
@@ -66,4 +67,4 @@ const quickSort = <T>(
   return sortedArray;
 };
 
-module.exports = quickSort;
+export default quickSort;

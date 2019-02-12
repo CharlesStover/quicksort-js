@@ -1,6 +1,8 @@
+/.nyc_output
 /node_modules
+/src
 /.gitignore
+/.npmignore
 /.travis.yml
-/quicksort.ts
 /tsconfig.json
 /yarn.lock

@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "declaration": true,
     "downlevelIteration": true,
-    "lib": [ "es5" ],
+    "lib": [ "es5", "es2017.object" ],
     "module": "commonjs",
     "moduleResolution": "Node",
     "noFallthroughCasesInSwitch": true,
@@ -18,5 +19,6 @@
     "strictPropertyInitialization": true,
     "target": "es5"
   },
-  "files": [ "quicksort.ts" ]
+  "exclude": [ "node_modules" ],
+  "files": [ "./src/quicksort.ts" ]
 }
