@@ -24,7 +24,7 @@ const quickSort: SortingAlgorithm = <T>(
   const recursiveSort = (start: number, end: number) => {
 
     // If this sub-array contains less than 2 elements, it's sorted.
-    if (end - start < 2) {
+    if (end - start < 1) {
       return;
     }
 
@@ -59,11 +59,11 @@ const quickSort: SortingAlgorithm = <T>(
 
     // Recursively sort the less-than and greater-than arrays.
     recursiveSort(start, splitIndex - 1);
-    recursiveSort(splitIndex, end);
+    recursiveSort(splitIndex + 1, end);
   };
 
   // Sort the entire array.
-  recursiveSort(0, unsortedArray.length - 1);
+  recursiveSort(0, sortedArray.length - 1);
   return sortedArray;
 };
 
