@@ -23,7 +23,7 @@ const quickSort: SortingAlgorithm = <T>(
   // Recursively sort sub-arrays.
   const recursiveSort = (start: number, end: number) => {
 
-    // If this sub-array contains less than 2 elements, it's sorted.
+    // If this sub-array is empty, it's sorted.
     if (end - start < 1) {
       return;
     }
