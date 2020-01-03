@@ -32,7 +32,7 @@
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.9",
     "chai": "^4.2.0",
-    "mocha": "^5.2.0",
+    "mocha": "^6.2.2",
     "nyc": "^13.2.0",
     "ts-node": "^8.0.2",
     "typescript": "^3.1.6"
